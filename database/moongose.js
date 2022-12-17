@@ -17,7 +17,7 @@ const init = (name, power) => {
     mongoose.connect(`mongodb+srv://caesdev:${process.env.PASS}@cluster0.8lkkc60.mongodb.net/StareBot?retryWrites=true&w=majority`);
     mongoose.Promise = global.Promise;
 
-    User.countDocuments({ name: name }, function (err, count) {
+    User.countDocuments({ name: name }, function (count) {
         if (count > 0) {
             User.updateOne({ name: name }, { power: power }, function () { });
         } else {
