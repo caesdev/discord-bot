@@ -16,22 +16,9 @@ client.on('messageCreate', async (message) => {
     let limiter = timeLimiter.take(message.author.id);
     let username = message.author.username;
 
-    if (message.content === '!poder') {
-        if (limiter) { message.reply({ content: 'Ocupado, ve a joder en otro lado' }) }
-        getPower(message, username);
-
-    } else if (message.content === '!poder') {
-        if (limiter) { message.reply({ content: 'Ocupado, ve a joder en otro lado' }) }
-        getPower(message, username)
-    }
-    else if (message.content === '!top') {
-        if (limiter) { message.reply({ content: 'Ocupado, ve a joder en otro lado' }) }
-        getTop(message);
-
-    } else if (message.content === '!bottom') {
-        if (limiter) { message.reply({ content: 'Ocupado, ve a joder en otro lado' }) }
-        getBottom(message);
-    }
+    if (message.content === '!poder') { getPower(message, username); }
+    else if (message.content === '!top') { getTop(message); }
+    else if (message.content === '!bottom') { getBottom(message); }
 });
 mongoose.init();
 client.login(process.env.DISCORD_TOKEN);
