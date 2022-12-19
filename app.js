@@ -4,21 +4,28 @@ const { getPower } = require('./functions/getPower');
 const { RateLimiter } = require('discord.js-rate-limiter');
 const { Client, GatewayIntentBits } = require('discord.js');
 
-const { getTop, getBottom } = require('./functions/rankingUsers');
+const { getTop, getRanking } = require('./functions/rankingUsers');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
-let timeLimiter = new RateLimiter(1, 5000);
+let timeLimiter = new RateLimiter(1, 30000);
 
 client.on('ready', () => {
     client.user.setActivity(`perseguir offliners`);
 });
 
 client.on('messageCreate', async (message) => {
+
     let limiter = timeLimiter.take(message.author.id);
     let username = message.author.username;
+    let tag = message.author.tag;
 
-    if (message.content === '!poder') { getPower(message, username); }
-    else if (message.content === '!top') { getTop(message); }
-    else if (message.content === '!bottom') { getBottom(message); }
+    if (message.content === '!poder') {
+        if (limiter) { message.reply({ content: `${username} 😐` }) }
+        else {
+            getPower(message, username, tag);
+            getTop(message, client)
+        }
+    }
+    else if (message.content === '!top') { getTop(message, client); }
 });
 mongoose.init();
 client.login(process.env.DISCORD_TOKEN);
