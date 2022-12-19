@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 let userSchema = new Schema({
     name: String,
-    power: Number
+    power: Number,
+    server: Number
 });
 
 module.exports = mongoose.model('users', userSchema);

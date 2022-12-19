@@ -1,11 +1,12 @@
 const setUser = require('../functions/setUser');
 
 function getPower(message, username) {
-    let powerValue = Math.floor(Math.random() * 10001);
+    let server_id = message.guild.id;
+    let powerValue = Math.floor(Math.random() * 1001);
     message.channel.send(
-        `>>> @${tag} tu nivel de poder: **${powerValue}**`
+        `>>> @${username} tu nivel de poder: **${powerValue}**`
     );
-    setUser.saveUser(username, powerValue);
+    setUser.saveUser(username, powerValue, server_id);
     return `${powerValue}`
 }
 module.exports = { getPower }
