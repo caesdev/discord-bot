@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var moment = require('moment');
 require('dotenv').config();
 
 const init = (name, power) => {
@@ -18,14 +19,15 @@ const init = (name, power) => {
 
 
     mongoose.connection.on('connected', () => {
+        console.log('connected to database at'.green, moment().format('h:mm:ss a'));
     });
 
     mongoose.connection.on('disconnected', () => {
-        console.log('disconnected to the database');
+        console.log('disconnected to database at'.red, moment().format('h:mm:ss a'));
     });
 
     mongoose.connection.on('err', (err) => {
-        console.log('error with connection' + err);
+        console.log('error with connection at'.red + err, moment().format('h:mm:ss a'));
     });
 }
 module.exports = { init };
