@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 var moment = require('moment');
 require('dotenv').config();
 
-const init = (name, power) => {
+const init = () => {
     const dbOptions = {
         userNewURLParser: true,
         useUnifiedTopology: true,
@@ -19,15 +19,15 @@ const init = (name, power) => {
 
 
     mongoose.connection.on('connected', () => {
-        console.log('connected to database at'.green, moment().format('h:mm:ss a'));
+        console.log('[SUCCESS]: CONNECTED TO DATABASE'.green, moment().format('h:mm:ss a'));
     });
 
     mongoose.connection.on('disconnected', () => {
-        console.log('disconnected to database at'.red, moment().format('h:mm:ss a'));
+        console.log('[SUCCESS]: DISCONNECTED TO DATABASE'.red, moment().format('h:mm:ss a'));
     });
 
     mongoose.connection.on('err', (err) => {
-        console.log('error with connection at'.red + err, moment().format('h:mm:ss a'));
+        console.log('[ERROR]:'.red + err, moment().format('h:mm:ss a'));
     });
 }
 module.exports = { init };
