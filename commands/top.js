@@ -6,7 +6,7 @@ function getTop(message, client) {
     let server_id = message.guild.id;
     channel_id = channel_id.id.toString();
     client.channels.cache.get(channel_id).send('Top 10 de los que mas spammean !poder');
-    User.find({ server: server_id }).sort({ power: 'desc' }).limit(10).exec(function (err, users) {
+    User.find({ server: server_id }).sort({ power: 'desc' }).limit(5).exec(function (err, users) {
         users.map(function (element, index) {
             data = (`>>> **Top ${index + 1}**. ${element.name} ${element.power} rango **${element.rank}**`);
             client.channels.cache.get(channel_id).send(

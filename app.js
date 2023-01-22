@@ -29,15 +29,9 @@ client.on('messageCreate', async (message) => {
         if (limiter) { message.reply({ content: `${username} 😐` }) }
         else { await getPower(message, username); }
     }
-    else if (commando === '!ayuda') {
-        await message.reply({
-            content: '>>> Los comandos disponibles son: \n!poder\n!pos\n!yo\n!duelo\n!bloque'
-        });
-    }
     else if (commando === '!pos') { await getTop(message, client); }
     else if (commando === '!yo') { await getSelf(message, username); }
     else if (commando === '!duelo') { await getDuelo(message, username); }
-    else if (commando === '!bloque') { await getBloque(message, username); }
 });
 mongoose.init();
 client.login(process.env.DISCORD_TOKEN);
