@@ -12,12 +12,11 @@ const { getSelf } = require('./commands/self');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 let timeLimiter = new RateLimiter(1, 5000);
 client.on('ready', () => {
-    let membersCount = client.guilds.cache.map(guild => guild.memberCount).reduce((a, b) => a + b, 0)
-    client.user.setPresence({
-        activities: [{ name: `${membersCount} usuarios`, type: ActivityType.Listening }],
-        status: `online`
-    });
-    
+
+    setInterval(() => {
+        let membersCount = client.guilds.cache.map(guild => guild.memberCount).reduce((a, b) => a + b, 0)
+        client.user.setActivity(`name: ${membersCount} usuarios`, {type: ActivityType.Listening});
+    }, 1000 * 60);
     bot = client.user.tag;
     console.log(`STATUS: ${bot} [ON]`.cyan, moment().format('h:mm:ss a'));
 });
