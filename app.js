@@ -5,7 +5,6 @@ const { getTop } = require('./commands/top');
 const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
 const { getPower } = require('./commands/poder');
 const { getDuelo } = require('./commands/duelo')
-const { getBloque } = require('./commands/sorteo')
 const { RateLimiter } = require('discord.js-rate-limiter');
 const mongoose = require('./database/moongose');
 const { getSelf } = require('./commands/self');
