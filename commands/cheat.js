@@ -3,120 +3,86 @@ const User = require('../models/user');
 
 function getCheat(message, username) {
     let server_id = message.guild.id;
-    let powerValue = Math.floor(Math.random() * (111));
+    let cheat = Math.floor(Math.random() * 1.2);
+    let powerValue = Math.floor(Math.random() * ((111) * cheat));
     let rank = ['BAJO', 'MEDIO', 'ALTO', 'SUPREMO', 'SEMI-DIOS', 'DIOS'];
 
     if (powerValue % 2 === 0) {
-        if (powerValue < 2000) {
-            setUser.saveUserTrue(username, powerValue, rank[0], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+        User.find({ name: username, server: server_id }).exec((err, user) => {
+            user.map((element) => {
+                if (element.power < 2000) {
+                    setUser.saveUserTrue(username, powerValue, rank[0], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
-                });
-            });
-        }
-        else if (powerValue > 2001 && powerValue <= 4000) {
-            setUser.saveUserTrue(username, powerValue, rank[1], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+                } else if (element.power > 2001 && element.power <= 4000) {
+                    setUser.saveUserTrue(username, powerValue, rank[1], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
-                });
-            });
-        }
-
-        else if (powerValue > 4001 && powerValue <= 6000) {
-            setUser.saveUserTrue(username, powerValue, rank[2], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+                }
+                else if (element.power > 4001 && element.power <= 6000) {
+                    setUser.saveUserTrue(username, powerValue, rank[2], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
-                });
-            });
-        }
-        else if (powerValue > 6001 && powerValue <= 8000) {
-            setUser.saveUserTrue(username, powerValue, rank[3], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+                }
+                else if (element.power > 6001 && element.power <= 8000) {
+                    setUser.saveUserTrue(username, powerValue, rank[3], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
-                });
-            });
-        }
-        else if (powerValue > 8001 && powerValue <= 9500) {
-            setUser.saveUserTrue(username, powerValue, rank[4], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+                }
+                else if (element.power > 8001 && element.power <= 9500) {
+                    setUser.saveUserTrue(username, powerValue, rank[4], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
-                });
-            });
-        }
-        else if (powerValue > 9501 && powerValue <= 10000) {
-            setUser.saveUserTrue(username, powerValue, rank[5], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+                }
+                else if (element.power > 9501 && element.power <= 10000) {
+                    setUser.saveUserTrue(username, powerValue, rank[5], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
-                });
-            });
-        }
+                } else if (element.power >= 10001) {
+                    setUser.saveUserTrue(username, powerValue, rank[6], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
+                    message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
+                }
+            })
+        })
     } else {
-        if (powerValue < 2000) {
-            setUser.saveUserFalse(username, powerValue, rank[0], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+        User.find({ name: username, server: server_id }).exec((err, user) => {
+            user.map((element) => {
+                if (element.power < 2000) {
+                    setUser.saveUserFalse(username, powerValue, rank[0], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
-                });
-            });
-        }
-        else if (powerValue > 2001 && powerValue <= 4000) {
-            setUser.saveUserFalse(username, powerValue, rank[1], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+                } else if (element.power > 2001 && element.power <= 4000) {
+                    setUser.saveUserFalse(username, powerValue, rank[1], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
-                });
-            });
-        }
-        else if (powerValue > 4001 && powerValue <= 6000) {
-            setUser.saveUserFalse(username, powerValue, rank[2], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+                }
+                else if (element.power > 4001 && element.power <= 6000) {
+                    setUser.saveUserFalse(username, powerValue, rank[2], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
-                });
-            });
-        }
-        else if (powerValue > 6001 && powerValue <= 8000) {
-            setUser.saveUserFalse(username, powerValue, rank[3], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+                }
+                else if (element.power > 6001 && element.power <= 8000) {
+                    setUser.saveUserFalse(username, powerValue, rank[3], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
-                });
-            });
-        }
-        else if (powerValue > 8001 && powerValue <= 9500) {
-            setUser.saveUserFalse(username, powerValue, rank[4], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+                }
+                else if (element.power > 8001 && element.power <= 9500) {
+                    setUser.saveUserFalse(username, powerValue, rank[4], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
-                });
-            });
-        }
-        else if (powerValue > 9501 && powerValue <= 10000) {
-            setUser.saveUserFalse(username, powerValue, rank[5], server_id);
-            User.find({ name: username, server: server_id }).exec(function (err, user) {
-                user.map(function (element) {
-                    let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
+                }
+                else if (element.power > 9501 && element.power <= 10000) {
+                    setUser.saveUserFalse(username, powerValue, rank[5], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
                     message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
-                });
-            });
-        }
+                } else if (element.power >= 10001) {
+                    setUser.saveUserFalse(username, powerValue, rank[6], server_id);
+                    let userData = (`Tus datos antes de entrenar son: ${element.name} ${element.power} rango **${element.rank}**`)
+                    message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
+                }
+            })
+        })
     }
 }
 module.exports = { getCheat }
