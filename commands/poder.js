@@ -11,7 +11,7 @@ function getPower(message, username) {
         User.find({ name: username, server: server_id }).exec(function (err, user) {
             user.map(function (element) {
                 let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
+                message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
             });
         });
     }
@@ -20,7 +20,7 @@ function getPower(message, username) {
         User.find({ name: username, server: server_id }).exec(function (err, user) {
             user.map(function (element) {
                 let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
+                message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
             });
         });
     }
@@ -29,7 +29,7 @@ function getPower(message, username) {
         User.find({ name: username, server: server_id }).exec(function (err, user) {
             user.map(function (element) {
                 let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
+                message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
             });
         });
     }
@@ -38,7 +38,7 @@ function getPower(message, username) {
         User.find({ name: username, server: server_id }).exec(function (err, user) {
             user.map(function (element) {
                 let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
+                message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
             });
         });
     }
@@ -47,7 +47,7 @@ function getPower(message, username) {
         User.find({ name: username, server: server_id }).exec(function (err, user) {
             user.map(function (element) {
                 let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
+                message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
             });
         });
     }
@@ -56,7 +56,7 @@ function getPower(message, username) {
         User.find({ name: username, server: server_id }).exec(function (err, user) {
             user.map(function (element) {
                 let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
+                message.reply({ content: `>>> ${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
             });
         });
     }
