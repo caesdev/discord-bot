@@ -5,6 +5,7 @@ const { getTop } = require('./commands/top');
 const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
 const { getPower } = require('./commands/poder');
 const { getDuelo } = require('./commands/duelo')
+const { getCheat } = require('./commands/cheat');
 const { RateLimiter } = require('discord.js-rate-limiter');
 const mongoose = require('./database/moongose');
 const { getSelf } = require('./commands/self');
@@ -14,7 +15,7 @@ client.on('ready', () => {
 
     setInterval(() => {
         let membersCount = client.guilds.cache.map(guild => guild.memberCount).reduce((a, b) => a + b, 0)
-        client.user.setActivity(`${membersCount} usuarios`, {type: ActivityType.Listening});
+        client.user.setActivity(`${membersCount} usuarios`, { type: ActivityType.Listening });
     }, 1000 * 60);
     bot = client.user.tag;
     console.log(`STATUS: ${bot} [ON]`.cyan, moment().format('h:mm:ss a'));
@@ -27,6 +28,11 @@ client.on('messageCreate', async (message) => {
     if (commando === '!poder') {
         if (limiter) { message.reply({ content: `${username} 😐` }) }
         else { await getPower(message, username); }
+    }
+
+    if (commando === '!cheat') {
+        if (limiter) { message.reply({ content: `${username} 😐` }) }
+        else { await getCheat(message, username); }
     }
     else if (commando === '!pos') { await getTop(message, client); }
     else if (commando === '!yo') { await getSelf(message, username); }
