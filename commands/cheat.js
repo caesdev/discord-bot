@@ -12,7 +12,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
                 });
             });
         }
@@ -21,7 +21,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
                 });
             });
         }
@@ -31,7 +31,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
                 });
             });
         }
@@ -40,7 +40,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
                 });
             });
         }
@@ -49,7 +49,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
                 });
             });
         }
@@ -58,7 +58,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder aumento en: **${powerValue}**` })
                 });
             });
         }
@@ -68,7 +68,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
                 });
             });
         }
@@ -77,7 +77,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
                 });
             });
         }
@@ -86,7 +86,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
                 });
             });
         }
@@ -95,7 +95,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
                 });
             });
         }
@@ -104,7 +104,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
                 });
             });
         }
@@ -113,7 +113,7 @@ function getCheat(message, username) {
             User.find({ name: username, server: server_id }).exec(function (err, user) {
                 user.map(function (element) {
                     let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
-                    message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**\n${userData}` })
+                    message.reply({ content: `>>>${userData} \n${username} tu nivel de poder bajo en: **${powerValue}**` })
                 });
             });
         }
