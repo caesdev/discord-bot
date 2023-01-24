@@ -1,4 +1,5 @@
 const setUser = require('../database/createOrUpdateUser');
+const { getSelf } = require('./self');
 
 function getPower(message, username) {
 
@@ -8,6 +9,7 @@ function getPower(message, username) {
 
     if (powerValue < 2000) {
         message.reply({ content: `>>> @${username} tu nivel de poder aumento en: **${powerValue}**` })
+        getSelf(message, username);
         setUser.saveUserTrue(username, powerValue, rank[0], server_id);
     }
 
