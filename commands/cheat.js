@@ -3,9 +3,9 @@ const User = require('../models/user');
 
 function getCheat(message, username) {
     let server_id = message.guild.id;
-    let cheat = Math.floor(Math.random() * 1.2);
+    let cheat = Math.floor(Math.random() * 3);
     let powerValue = Math.floor(Math.random() * ((111) * cheat));
-    let rank = ['BAJO', 'MEDIO', 'ALTO', 'SUPREMO', 'SEMI-DIOS', 'DIOS'];
+    let rank = ['BAJO', 'MEDIO', 'ALTO', 'HEROE', 'SEMI-DIOS', 'DIOS', 'SUPREME'];
 
     if (powerValue % 2 === 0) {
         User.find({ name: username, server: server_id }).exec((err, user) => {
