@@ -1,5 +1,4 @@
 const setUser = require('../database/createOrUpdateUser');
-const { getSelf } = require('./self');
 
 function getCheat(message, username) {
     let server_id = message.guild.id;
@@ -9,7 +8,6 @@ function getCheat(message, username) {
     if (powerValue % 2 === 0) {
         if (powerValue < 2000) {
             message.reply({ content: `>>> @${username} tu nivel de poder aumento en: **${powerValue}**` })
-            getSelf(message, username);
             setUser.saveUserTrue(username, powerValue, rank[0], server_id);
         }
         else if (powerValue > 2001 && powerValue <= 4000) {
@@ -36,7 +34,6 @@ function getCheat(message, username) {
     } else {
         if (powerValue < 0) {
             message.reply({ content: `>>> @${username} tu nivel de poder bajo en: **${powerValue}**` })
-            getSelf(message, username);
             setUser.saveUserFalse(username, powerValue, rank[6], server_id);
         }
         else if (powerValue < 2000) {
