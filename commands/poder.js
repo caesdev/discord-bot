@@ -16,7 +16,8 @@ function getPower(message, username) {
         });
     }
     else if (powerValue > 2001 && powerValue <= 4000) {
-        setUser.saveUserTrue(username, powerValue, rank[1], server_id);
+        let new_rank = rank[1];
+        setUser.saveUserTrue(username, powerValue, new_rank, server_id);
         User.find({ name: username, server: server_id }).exec(function (err, user) {
             user.map(function (element) {
                 let userData = (`${element.name} ${element.power} rango **${element.rank}**`)
