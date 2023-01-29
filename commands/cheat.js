@@ -33,10 +33,10 @@ function getCheat(message, username) {
                         else if (element.power > 9501 && element.power <= 10000) {
                             setUser.saveUserTrue(username, powerValue, rank[5], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**` })
-                        } else if (element.power >= 10001) {
+                        } else if (element.power >= 10001 && element.power <= 25000) {
                             setUser.saveUserTrue(username, powerValue, rank[6], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**` })
-                        } else if (element.power >= 25000) {
+                        } else if (element.power >= 25001) {
                             setUser.saveUserTrue(username, powerValue, rank[7], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}` })
                         }
@@ -75,11 +75,11 @@ function getCheat(message, username) {
                         else if (element.power > 9501 && element.power <= 10000) {
                             setUser.saveUserFalse(username, powerValue, rank[5], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**` })
-                        } else if (element.power >= 10001) {
+                        } else if (element.power >= 10001 && element.power <= 25000) {
                             setUser.saveUserFalse(username, powerValue, rank[6], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**` })
                         }
-                        else if (element.power >= 25000) {
+                        else if (element.power >= 25001) {
                             setUser.saveUserFalse(username, powerValue, rank[7], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}` })
                         }
