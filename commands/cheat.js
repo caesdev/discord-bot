@@ -41,7 +41,7 @@ function getCheat(message, username) {
                             message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}` })
                         } else if(element.power >= 50001 && element.power <= 75000){
                             setUser.saveUserTrue(username, powerValue, rank[8], server_id);
-                            message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}` })
+                            message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**` })
                         }
                     })
                 } else {
@@ -84,7 +84,7 @@ function getCheat(message, username) {
                         }
                         else if (element.power >= 25001) {
                             setUser.saveUserFalse(username, powerValue, rank[7], server_id);
-                            message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}` })
+                            message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**` })
                         }
                         else if(element.power >= 50001 && element.power <= 75000){
                             setUser.saveUserFalse(username, powerValue, rank[8], server_id);
