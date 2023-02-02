@@ -5,7 +5,7 @@ function getCheat(message, username) {
 
     let server_id = message.guild.id;
     let powerValue = Math.floor(Math.random() * 350);
-    let rank = ['BAJO', 'MEDIO', 'ALTO', 'HEROE', 'SEMI-DIOS', 'DIOS', 'SUPREME', 'REY SUPREME'];
+    let rank = ['BAJO', 'MEDIO', 'ALTO', 'HEROE', 'SEMI-DIOS', 'DIOS', 'SUPREME', 'REY SUPREME', 'REY SUPREME CORRUPTO'];
     if (powerValue % 2 === 0) {
         User.countDocuments({ name: username, server: server_id }, function (err, count) {
             User.find({ name: username, server: server_id }).exec((err, user) => {
@@ -36,9 +36,12 @@ function getCheat(message, username) {
                         } else if (element.power >= 10001 && element.power <= 25000) {
                             setUser.saveUserTrue(username, powerValue, rank[6], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**` })
-                        } else if (element.power >= 25001) {
+                        } else if (element.power >= 25001 && element.power <= 50000) {
                             setUser.saveUserTrue(username, powerValue, rank[7], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}` })
+                        } else if(element.power >= 50001 && element.power <= 75000){
+                            setUser.saveUserTrue(username, powerValue, rank[8], server_id);
+                            message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}` })
                         }
                     })
                 } else {
@@ -81,6 +84,10 @@ function getCheat(message, username) {
                         }
                         else if (element.power >= 25001) {
                             setUser.saveUserFalse(username, powerValue, rank[7], server_id);
+                            message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}` })
+                        }
+                        else if(element.power >= 50001 && element.power <= 75000){
+                            setUser.saveUserFalse(username, powerValue, rank[8], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}` })
                         }
                     })

@@ -5,7 +5,7 @@ function getPower(message, username) {
 
     let server_id = message.guild.id;
     let powerValue = Math.floor(Math.random() * (200));
-    let rank = ['BAJO', 'MEDIO', 'ALTO', 'HEROE', 'SEMI-DIOS', 'DIOS', 'SUPREME', 'REY SUPREME'];
+    let rank = ['BAJO', 'MEDIO', 'ALTO', 'HEROE', 'SEMI-DIOS', 'DIOS', 'SUPREME', 'REY SUPREME', 'REY SUPREME CORRUPTO'];
     User.countDocuments({ name: username, server: server_id }, function (err, count) {
         User.find({ name: username, server: server_id }).exec((err, user) => {
             if (count > 0) {
@@ -38,6 +38,9 @@ function getPower(message, username) {
                     } else if (element.power >= 25001) {
                         setUser.saveUserTrue(username, powerValue, rank[7], server_id);
                         message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}` })
+                    } else if (element.power >= 50001 && element.power <= 75000) {
+                        setUser.saveUserTrue(username, powerValue, rank[8], server_id);
+                        message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}` })
                     }
                 })
             } else {
