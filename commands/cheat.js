@@ -82,7 +82,7 @@ function getCheat(message, username) {
                             setUser.saveUserFalse(username, powerValue, rank[6], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**` })
                         }
-                        else if (element.power >= 25001) {
+                        else if (element.power >= 25001 && element.power <= 5000) {
                             setUser.saveUserFalse(username, powerValue, rank[7], server_id);
                             message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**` })
                         }
