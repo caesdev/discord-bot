@@ -40,7 +40,7 @@ function getPower(message, username) {
                         message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**` })
                     } else if (element.power >= 50001 && element.power <= 75000) {
                         setUser.saveUserTrue(username, powerValue, rank[8], server_id);
-                        message.reply({ content: `>>> ${username} tu nivel de poder bajo en: **${powerValue}**` })
+                        message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**` })
                     }
                 })
             } else {
