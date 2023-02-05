@@ -35,10 +35,13 @@ function getPower(message, username) {
                     } else if (element.power >= 10001 && element.power <= 25000) {
                         setUser.saveUserTrue(username, powerValue, rank[6], server_id);
                         message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**` })
-                    } else if (element.power >= 25001 && element.power <= 5000) {
+                    } else if (element.power >= 25001 && element.power <= 50000) {
                         setUser.saveUserTrue(username, powerValue, rank[7], server_id);
                         message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**` })
-                    } else if(element.power >= 75001){
+                    } else if(element.power >= 50001 && element.power <= 75000){
+                        setUser.saveUserTrue(username, powerValue, rank[8], server_id);
+                        message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**` })
+                    }  else if(element.power >= 75001){
                         setUser.saveUserTrue(username, powerValue, rank[8], server_id);
                         message.reply({ content: `>>> ${username} tu nivel de poder aumento en: **${powerValue}**` })
                     } 
